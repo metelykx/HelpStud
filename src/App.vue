@@ -1,46 +1,40 @@
-<script>
+<script setup>
+import logo from './assets/HelpStud.png'; // Проверь, что путь к картинке правильный
 </script>
 
 <template>
-  <div class="book">
-    <div class="header">
-      <!-- Добавляем класс для изображения -->
-      <img class="logo" src="./assets/HelpStud.png" alt="logo">
-      <h1>HelpStud</h1>
-    </div>
+  <div class="header">
+    <img :src="logo" alt="HelpStud Logo" class="logo" />
+    <h1 class="title">HelpStud</h1>
   </div>
 </template>
 
 <style scoped>
-/* Стили для основного контейнера */
-.book {
-  width: 100%; /* Занимает всю доступную ширину */
-  height: 100vh; /* Занимает всю высоту экрана */
-  box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
-  padding: 0; /* Убираем внутренние отступы */
-  margin: 0; /* Убираем внешние отступы */
-}
-
-/* Стили для заголовка */
+/* Хедер фиксирован наверху */
 .header {
-  display: flex; /* Используем Flexbox для управления размещением элементов */
+  display: flex;
   align-items: center; /* Выравниваем элементы по центру по вертикали */
-  justify-content: flex-start; /* Размещаем элементы в начале строки (слева) */
-  padding: 10px; /* Добавляем небольшой отступ вокруг содержимого */
-  margin: 0; /* Убираем внешние отступы */
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  width: 100%;
+  height: 80px; /* Высота заголовка */
+  position: fixed; /* Фиксируем наверху страницы */
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
 }
 
-/* Стили для логотипа */
+/* Логотип */
 .logo {
-  width: 40px; /* Устанавливаем ширину изображения */
-  height: auto; /* Сохраняем пропорции */
-  margin-right: 10px; /* Отступ справа от изображения до текста */
+  width: 50px; /* Настроить размер по желанию */
+  height: auto;
+  margin-right: 15px; /* Отступ между логотипом и текстом */
 }
 
-/* Стили для заголовка */
-h1 {
-  margin: 0; /* Убираем стандартные отступы заголовка */
-  line-height: 1; /* Корректируем высоту строки */
-  padding: 0; /* Убираем внутренние отступы */
+/* Текст */
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Kanit', sans-serif;
 }
 </style>
