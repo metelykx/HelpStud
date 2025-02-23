@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import logo from './assets/HelpStud.png';
 import sideImage from './assets/cfu.png';
+import searchIcon from './assets/search-icon.png'; // Импортируем иконку поиска
 
 const searchQuery = ref('');
 </script>
@@ -12,12 +13,15 @@ const searchQuery = ref('');
       <img :src="logo" alt="HelpStud Logo" class="logo" />
       <h1 class="title">HelpStud</h1>
       <div class="search-container">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Поиск предмета..."
-          class="search-input"
-        />
+        <div class="search-input-wrapper">
+          <img :src="searchIcon" alt="Search" class="search-icon" />
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Поиск предмета..."
+            class="search-input"
+          />
+        </div>
       </div>
     </div>
 
@@ -47,9 +51,9 @@ const searchQuery = ref('');
     <!-- Футер -->
     <footer class="footer">
       <div class="footer-bottom">
-        <p>&copy; 2025 HelpStud. Все права защищены.</p>
+        <p>&copy; 2023 HelpStud. Все права защищены.</p>
         <p>
-          Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link">metelykx</a>
+          Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link">Metelykx</a>
         </p>
       </div>
     </footer>
@@ -98,25 +102,39 @@ const searchQuery = ref('');
   width: 300px;
 }
 
-.search-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.3s;
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 8px 15px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-input-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* Делаем иконку белой */
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
   color: #ffffff;
+  font-size: 16px;
+  font-family: 'Kanit', sans-serif;
 }
 
 .search-input::placeholder {
   color: rgba(255, 255, 255, 0.7);
-}
-
-.search-input:focus {
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .content {
@@ -188,7 +206,7 @@ const searchQuery = ref('');
   font-family: 'Kanit', sans-serif;
   margin-top: auto; /* Прижимаем футер к низу */
   text-align: center; /* Центрируем текст */
-  border-top: 1px solid #6b6b6b; /* Добавляем тонкую линию сверху */
+  border-top: 1px solid #e0e0e0; /* Добавляем тонкую линию сверху */
 }
 
 .footer-bottom {
@@ -199,7 +217,7 @@ const searchQuery = ref('');
 
 .footer-bottom p {
   margin: 0;
-  font-size: 14px; /* Уменьшаем размер текста */
+  font-size: 12px; /* Уменьшаем размер текста */
   color: #666; /* Серый цвет текста */
 }
 
