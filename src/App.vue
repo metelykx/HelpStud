@@ -7,44 +7,63 @@ const searchQuery = ref('');
 </script>
 
 <template>
-  <div class="header">
-    <img :src="logo" alt="HelpStud Logo" class="logo" />
-    <h1 class="title">HelpStud</h1>
-    <div class="search-container">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="Поиск предмета..."
-        class="search-input"
-      />
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="str">
-      <h2 class="about-heading">О нас</h2>
-      <div class="text-with-image">
-        <div class="text">
-          <p>
-            Университет — это важный шаг во взрослую жизнь, где ты найдёшь друзей, любовь и знания, которые станут основой твоего будущего.
-          </p>
-          <p class="subjects">
-            HelpStud создан, чтобы помочь тебе в обучении по направлениям: Программная инженерия, Информатика и вычислительная техника, Компьютерная безопасность и не только.
-          </p>
-          <p>
-            Здесь ты разберёшься в сложных темах, получишь советы по программированию и другим сферам. Начни учиться уже сейчас и быстрее достигай своих целей!
-          </p>
-          <p>
-            Развивайся и учись вместе с HelpStud!
-          </p>
-        </div>
-        <img :src="sideImage" alt="CFU Image" class="side-image" />
+  <div class="page-container">
+    <div class="header">
+      <img :src="logo" alt="HelpStud Logo" class="logo" />
+      <h1 class="title">HelpStud</h1>
+      <div class="search-container">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Поиск предмета..."
+          class="search-input"
+        />
       </div>
     </div>
+
+    <div class="content">
+      <div class="str">
+        <h2 class="about-heading">О нас</h2>
+        <div class="text-with-image">
+          <div class="text">
+            <p>
+              Университет — это важный шаг во взрослую жизнь, где ты найдёшь друзей, любовь и знания, которые станут основой твоего будущего.
+            </p>
+            <p class="subjects">
+              HelpStud создан, чтобы помочь тебе в обучении по направлениям: Программная инженерия, Информатика и вычислительная техника, Компьютерная безопасность и не только.
+            </p>
+            <p>
+              Здесь ты разберёшься в сложных темах, получишь советы по программированию и другим сферам. Начни учиться уже сейчас и быстрее достигай своих целей!
+            </p>
+            <p>
+              Развивайся и учись вместе с HelpStud!
+            </p>
+          </div>
+          <img :src="sideImage" alt="CFU Image" class="side-image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2025 HelpStud. Все права защищены.</p>
+        <p>
+          Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link">metelykx</a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style scoped>
+/* Основной контейнер страницы */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Минимальная высота на весь экран */
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -101,13 +120,10 @@ const searchQuery = ref('');
 }
 
 .content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding-top: 12%;
-  box-sizing: border-box;
+  flex: 1; /* Растягиваем контент на всё доступное пространство */
+  padding-top: 12%; /* Отступ для хедера */
   width: 100%;
+  box-sizing: border-box;
 }
 
 .str {
@@ -162,5 +178,39 @@ const searchQuery = ref('');
 
 .str p:last-child {
   margin-bottom: 0;
+}
+
+/* Стили для футера */
+.footer {
+  background-color: transparent; /* Убираем синий фон */
+  color: #333; /* Темный цвет текста */
+  padding: 10px 20px; /* Уменьшаем отступы */
+  font-family: 'Kanit', sans-serif;
+  margin-top: auto; /* Прижимаем футер к низу */
+  text-align: center; /* Центрируем текст */
+  border-top: 1px solid #6b6b6b; /* Добавляем тонкую линию сверху */
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Расстояние между строками */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px; /* Уменьшаем размер текста */
+  color: #666; /* Серый цвет текста */
+}
+
+.metelykx-link {
+  color: #007bff; /* Синий цвет ссылки */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s;
+}
+
+.metelykx-link:hover {
+  color: #0056b3; /* Темно-синий цвет при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
 }
 </style>
