@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import logo from './assets/HelpStud.png';
 import sideImage from './assets/cfu.png';
-import searchIcon from './assets/search-icon.png'; // Импортируем иконку поиска
+import searchIcon from './assets/search-icon.png';
 
 const searchQuery = ref('');
 </script>
@@ -31,16 +31,19 @@ const searchQuery = ref('');
         <div class="text-with-image">
           <div class="text">
             <p>
-              Университет — это важный шаг во взрослую жизнь, где ты найдёшь друзей, любовь и знания, которые станут основой твоего будущего.
+              Университет — это важный шаг во взрослую жизнь, где ты найдёшь друзей, знания и начнёшь строить своё будущее.
             </p>
             <p class="subjects">
-              HelpStud создан, чтобы помочь тебе в обучении по направлениям: Программная инженерия, Информатика и вычислительная техника, Компьютерная безопасность и не только.
+              HelpStud создан, чтобы помочь тебе в обучении по направлениям: <b>Программная инженерия, Информатика и вычислительная техника, Компьютерная безопасность и другим.</b>
             </p>
             <p>
-              Здесь ты разберёшься в сложных темах, получишь советы по программированию и другим сферам. Начни учиться уже сейчас и быстрее достигай своих целей!
+              Используй <strong>поисковик</strong>, чтобы найти советы, ответы на вопросы и учебные материалы по нужному предмету. <b>Просто введи название — и получи результат!</b>
             </p>
             <p>
-              Развивайся и учись вместе с HelpStud!
+              Начни учиться уже сейчас и достигай своих целей быстрее!
+            </p>
+            <p>
+              Развивайся и учись вместе с <b>HelpStud</b>!
             </p>
           </div>
           <img :src="sideImage" alt="CFU Image" class="side-image" />
@@ -50,11 +53,21 @@ const searchQuery = ref('');
 
     <!-- Футер -->
     <footer class="footer">
-      <div class="footer-bottom">
-        <p>&copy; 2023 HelpStud. Все права защищены.</p>
-        <p>
-          Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link">Metelykx</a>
-        </p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-heading">Связь с нами</h3>
+          <ul class="contact-list">
+            <li>
+              <a href="https://t.me/helpstud" target="_blank" class="contact-link">Telegram</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section right-section">
+          <p>&copy; 2025 HelpStud.</p>
+          <p>
+            Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link" id = "links">Metelykx</a>
+          </p>
+        </div>
       </div>
     </footer>
   </div>
@@ -65,9 +78,15 @@ const searchQuery = ref('');
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Минимальная высота на весь экран */
+  min-height: 100vh;
 }
 
+/* Делаем текст внутри <b> жирным */
+b {
+  font-weight: bold;
+}
+
+/* Хедер */
 .header {
   display: flex;
   align-items: center;
@@ -81,12 +100,16 @@ const searchQuery = ref('');
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .logo {
   width: 50px;
   height: auto;
   margin-right: 15px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.2s forwards;
 }
 
 .title {
@@ -95,11 +118,15 @@ const searchQuery = ref('');
   color: #ffffff;
   font-family: 'Kanit', sans-serif;
   margin-right: auto;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.3s forwards;
 }
 
 .search-container {
   margin-left: 20px;
   width: 300px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.4s forwards;
 }
 
 .search-input-wrapper {
@@ -120,7 +147,7 @@ const searchQuery = ref('');
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  filter: brightness(0) invert(1); /* Делаем иконку белой */
+  filter: brightness(0) invert(1);
 }
 
 .search-input {
@@ -137,9 +164,15 @@ const searchQuery = ref('');
   color: rgba(255, 255, 255, 0.7);
 }
 
+.search-input:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Основной контент */
 .content {
-  flex: 1; /* Растягиваем контент на всё доступное пространство */
-  padding-top: 12%; /* Отступ для хедера */
+  flex: 1;
+  padding-top: 12%;
   width: 100%;
   box-sizing: border-box;
 }
@@ -150,19 +183,26 @@ const searchQuery = ref('');
   line-height: 1.6;
   width: 100%;
   max-width: 1200px;
-  padding: 0 30px;
+  padding: 30px; /* Увеличили отступы */
   font-size: 20px;
   text-align: justify;
   margin: 0 auto;
+  border-radius: 20px; /* Закругление углов */
+  background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+  backdrop-filter: blur(5px); /* Эффект размытия */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Светлая рамка */
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 40px; /* Отступ снизу */
 }
 
 .about-heading {
   font-size: 30px;
   font-weight: bold;
-  color: #ffffff;
-  margin: 10px 10px 20px 90px;
-  text-align: center;
+  color: #007bff;
   font-family: 'Kanit', sans-serif;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.5s forwards;
 }
 
 .text-with-image {
@@ -176,15 +216,17 @@ const searchQuery = ref('');
   flex: 1;
   max-width: 800px;
   min-width: 600px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.6s forwards;
 }
 
 .side-image {
   width: 400px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-top: 0;
   flex-shrink: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.7s forwards;
 }
 
 .str p {
@@ -198,37 +240,80 @@ const searchQuery = ref('');
   margin-bottom: 0;
 }
 
-/* Стили для футера */
-.footer {
-  background-color: transparent; /* Убираем синий фон */
-  color: #333; /* Темный цвет текста */
-  padding: 10px 20px; /* Уменьшаем отступы */
-  font-family: 'Kanit', sans-serif;
-  margin-top: auto; /* Прижимаем футер к низу */
-  text-align: center; /* Центрируем текст */
-  border-top: 1px solid #e0e0e0; /* Добавляем тонкую линию сверху */
+/* Анимация для плавного появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.footer-bottom {
+/* Футер */
+.footer {
+  background-color: transparent;
+  color: #7d7d7d;
+  padding: 8px 20px;
+  font-family: 'Kanit', sans-serif;
+  margin-top: auto;
+  text-align: center;
+  border-top: 1px solid #8b8b8b;
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Расстояние между строками */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.8s forwards;
 }
 
-.footer-bottom p {
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.footer-section {
+  flex: 1;
   margin: 0;
-  font-size: 12px; /* Уменьшаем размер текста */
-  color: #666; /* Серый цвет текста */
 }
 
+.footer-heading {
+  font-size: 15px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 4px;
+}
+
+.contact-link,
 .metelykx-link {
-  color: #007bff; /* Синий цвет ссылки */
-  text-decoration: none; /* Убираем подчеркивание */
+  color: #7d7d7d;
+  text-decoration: none;
   transition: color 0.3s;
+  font-size: 15px;
 }
 
+.contact-link:hover,
 .metelykx-link:hover {
-  color: #0056b3; /* Темно-синий цвет при наведении */
-  text-decoration: underline; /* Подчеркивание при наведении */
+  color: #007bff;
+  text-decoration: underline;
+}
+#links {
+  color:#007bff;
 }
 </style>
