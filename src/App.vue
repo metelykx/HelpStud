@@ -156,6 +156,18 @@ body {
   font-family: 'Kanit', sans-serif;
   color: #ffffff; /* Белый текст по умолчанию */
 }
+
+/* Анимация для плавного появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 
 <style scoped>
@@ -182,12 +194,16 @@ body {
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .logo {
   width: 50px;
   height: auto;
   margin-right: 15px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.2s forwards;
 }
 
 .title {
@@ -195,6 +211,8 @@ body {
   font-weight: bold;
   color: #ffffff;
   margin-right: auto;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.3s forwards;
 }
 
 /* Поиск */
@@ -202,6 +220,8 @@ body {
   position: relative;
   margin-left: 20px;
   width: 300px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.4s forwards;
 }
 
 .search-input-wrapper {
@@ -288,6 +308,8 @@ body {
   background: #181818; /* Темный фон */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.4s forwards;
 }
 
 .about-heading {
@@ -296,6 +318,8 @@ body {
   color: #007bff;
   font-family: 'Kanit', sans-serif;
   margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.5s forwards;
 }
 
 .text-with-image {
@@ -309,6 +333,8 @@ body {
   flex: 1;
   max-width: 800px;
   min-width: 600px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.6s forwards;
 }
 
 .side-image {
@@ -316,6 +342,8 @@ body {
   height: auto;
   margin-top: 0;
   flex-shrink: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.7s forwards;
 }
 
 .str p {
@@ -394,6 +422,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.8s forwards;
 }
 
 .footer-content {
