@@ -4,39 +4,22 @@ import logo from './assets/HelpStud.png';
 import sideImage from './assets/cfu.png';
 import searchIcon from './assets/search-icon.png';
 
+// Импортируем изображения для предметов
+import algorithmsImage from './assets/algorithm.png';
+import communicationImage from './assets/communication.png';
+import historyImage from './assets/history.png';
+// Добавьте остальные изображения по аналогии
+
 const searchQuery = ref('');
 const selectedSubject = ref(null);
 const isModalOpen = ref(false); // Состояние модального окна
 
-// Массив предметов
+// Массив предметов с картинками и рейтингом страха
 const subjects = [
-  { name: "Структуры и алгоритмы обработки данных", description: "Изучение структур данных и алгоритмов их обработки." },
-  { name: "Деловая коммуникация и русская речевая культура", description: "Развитие навыков делового общения и культуры речи." },
-  { name: "История России", description: "Изучение ключевых событий и процессов в истории России." },
-  { name: "Информатика и основы программирования", description: "Основы программирования и работы с информацией." },
-  { name: "Высшая математика", description: "Изучение математического анализа, линейной алгебры и других разделов." },
-  { name: "Иностранный язык", description: "Изучение иностранного языка для профессионального общения." },
-  { name: "Алгоритмизация и программирование", description: "Основы алгоритмизации и программирования." },
-  { name: "Физическая культура", description: "Развитие физической подготовки и здорового образа жизни." },
-  { name: "Проектная деятельность", description: "Организация и управление проектами." },
-  { name: "Операционные системы", description: "Изучение принципов работы операционных систем." },
-  { name: "Алгоритмы и методы вычисления", description: "Изучение алгоритмов и методов вычислений." },
-  { name: "Современные технологии программирования", description: "Изучение современных подходов и технологий в программировании." },
-  { name: "Основы российской государственности", description: "Изучение основ государственного устройства России." },
-  { name: "Человек и право", description: "Изучение правовых основ и их применения." },
-  { name: "Цифровые технологии в профессиональной сфере", description: "Использование цифровых технологий в профессиональной деятельности." },
-  { name: "Цифровая экосистема будущего", description: "Изучение цифровых экосистем и их роли в будущем." },
-  { name: "Дискретная математика", description: "Изучение дискретных структур и их свойств." },
-  { name: "Математическое и компьютерное моделирование", description: "Изучение методов математического и компьютерного моделирования." },
-  { name: "Компьютерные сети", description: "Изучение принципов работы компьютерных сетей." },
-  { name: "Теория автоматов и формальных языков", description: "Изучение теории автоматов и формальных языков." },
-  { name: "Базы данных", description: "Изучение принципов проектирования и работы с базами данных." },
-  { name: "История религий России", description: "Изучение истории религий на территории России." },
-  { name: "Объектно-ориентированное программирование", description: "Изучение принципов объектно-ориентированного программирования." },
-  { name: "Теория вероятностей и математическая статистика", description: "Изучение теории вероятностей и статистики." },
-  { name: "Интеллектуальный анализ данных", description: "Изучение методов анализа данных и машинного обучения." },
-  { name: "Основы социального проектирования", description: "Изучение основ создания социальных проектов." },
-  { name: "Безопасность природной среды и жизнедеятельности человека", description: "Изучение вопросов экологической безопасности." },
+  { name: "Структуры и алгоритмы обработки данных", description: "Изучение структур данных и алгоритмов их обработки.", image: algorithmsImage, fearRating: 4 },
+  { name: "Деловая коммуникация и русская речевая культура", description: "Развитие навыков делового общения и культуры речи.", image: communicationImage, fearRating: 2 },
+  { name: "История России", description: "Изучение ключевых событий и процессов в истории России.", image: historyImage, fearRating: 3 },
+  // Добавьте остальные предметы с изображениями и рейтингом страха
 ];
 
 // Фильтрация предметов по введённому запросу
@@ -121,8 +104,19 @@ const closeModal = () => {
     <div v-if="isModalOpen" class="modal-overlay">
       <div class="modal">
         <button class="close-button" @click="closeModal">×</button>
-        <h2>{{ selectedSubject.name }}</h2>
-        <p>{{ selectedSubject.description }}</p>
+        <div class="modal-content">
+          <!-- Картинка слева -->
+          <img :src="selectedSubject.image" alt="Subject Image" class="subject-image" />
+          <!-- Контент справа -->
+          <div class="modal-text">
+            <h2>{{ selectedSubject.name }}</h2>
+            <p>{{ selectedSubject.description }}</p>
+            <div class="fear-rating">
+              <span>Рейтинг страха: </span>
+              <span v-for="star in 5" :key="star" class="star" :class="{ 'filled': star <= selectedSubject.fearRating }">★</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -375,31 +369,67 @@ body {
   background: #181818; /* Темный фон для модального окна */
   padding: 20px;
   border-radius: 8px;
-  max-width: 500px;
-  width: 100%;
+  max-width: 600px; /* Увеличим ширину модального окна */
+  width: 90%;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень */
 }
 
+.modal-content {
+  display: flex;
+  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+  gap: 20px; /* Расстояние между картинкой и текстом */
+}
+
+.subject-image {
+  width: 150px; /* Уменьшаем ширину картинки */
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0; /* Запрещаем картинке сжиматься */
+}
+
+.modal-text {
+  flex: 1; /* Текст занимает оставшееся пространство */
+}
+
 .modal h2 {
   color: #007bff; /* Цвет заголовка */
   margin-bottom: 10px;
+  font-size: 24px; /* Увеличим размер заголовка */
 }
 
 .modal p {
   color: #ffffff; /* Белый текст */
   font-size: 16px;
   line-height: 1.6;
+  margin-bottom: 15px; /* Отступ снизу */
+}
+
+.fear-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.fear-rating .star {
+  color: #ccc;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fear-rating .star.filled {
+  color: #ffcc00;
 }
 
 .close-button {
   position: absolute;
-  top: 3px; /* Уменьшено значение */
-  right: 10px; /* Уменьшено значение */
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
   color: #007bff; /* Цвет кнопки */
 }
