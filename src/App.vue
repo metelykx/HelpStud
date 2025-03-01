@@ -148,14 +148,24 @@ const closeModal = () => {
   </div>
 </template>
 
+<style>
+/* Фон всей страницы */
+body {
+  background: #181818; /* Темный фон для всей страницы */
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+  color: #ffffff; /* Белый текст по умолчанию */
+}
+</style>
+
 <style scoped>
 /* Основной контейнер страницы */
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #f0f4f8;
-  font-family: 'Kanit', sans-serif;
+  background: #181818; /* Темный фон для контейнера */
+  color: #ffffff; /* Белый текст по умолчанию */
 }
 
 /* Хедер */
@@ -235,8 +245,8 @@ const closeModal = () => {
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #ccc;
+  background: #333; /* Темный фон для списка */
+  border: 1px solid #444;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -248,10 +258,11 @@ const closeModal = () => {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: #ffffff; /* Белый текст */
 }
 
 .suggestion-item:hover {
-  background-color: #f0f0f0;
+  background-color: #444; /* Темный фон при наведении */
 }
 
 /* Основной контент */
@@ -274,9 +285,8 @@ const closeModal = () => {
   text-align: justify;
   margin: 20px auto 40px;
   border-radius: 20px;
-  background: rgba(30, 30, 30, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #181818; /* Темный фон */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
@@ -326,7 +336,7 @@ const closeModal = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -334,12 +344,25 @@ const closeModal = () => {
 }
 
 .modal {
-  background: white;
+  background: #181818; /* Темный фон для модального окна */
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
   width: 100%;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.modal h2 {
+  color: #007bff; /* Цвет заголовка */
+  margin-bottom: 10px;
+}
+
+.modal p {
+  color: #ffffff; /* Белый текст */
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .close-button {
@@ -350,11 +373,16 @@ const closeModal = () => {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: #007bff; /* Цвет кнопки */
+}
+
+.close-button:hover {
+  color: #0056b3; /* Цвет кнопки при наведении */
 }
 
 /* Футер */
 .footer {
-  background-color: transparent;
+  background-color: #181818;
   color: #7d7d7d;
   padding: 8px 20px;
   font-family: 'Kanit', sans-serif;
