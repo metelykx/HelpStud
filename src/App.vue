@@ -5,24 +5,54 @@ import sideImage from './assets/cfu.png';
 import searchIcon from './assets/search-icon.png';
 
 // Импортируем изображения для предметов
-import algorithmsImage from './assets/algorithm.png';
-import communicationImage from './assets/communication.png';
-import historyImage from './assets/history.png';
-// Добавьте остальные изображения по аналогии
+import algorithmsImage from './assets/sub/algorithm.png';
+import communicationImage from './assets/sub/communication.png';
+import historyImage from './assets/sub/history.png';
+import infProg from './assets/sub/infProg.png';
+import math from './assets/sub/math.png';
+import eng from './assets/sub/eng.png';
+import programming from './assets/sub/programming.png';
+import sport from './assets/sub/sport.png';
+import doProject from './assets/sub/doProject.png';
+
+
+import os from './assets/sub/os.png';
+import methodV from './assets/sub/methodV.png';
+import stp from './assets/sub/stp.png';
+import osrf from './assets/sub/osrf.png';
+import perPr from './assets/sub/perPr.png';
+import zifrTech from './assets/sub/zifrTech.png';
+import ecoresh from './assets/sub/ecoresh.png';
 
 const searchQuery = ref('');
 const selectedSubject = ref(null);
-const isModalOpen = ref(false); // Состояние модального окна
+const isModalOpen = ref(false);
 
-// Массив предметов с картинками и рейтингом страха
+// Массив предметов с данными
 const subjects = [
-  { name: "Структуры и алгоритмы обработки данных", description: "Изучение структур данных и алгоритмов их обработки.", image: algorithmsImage, fearRating: 4 },
-  { name: "Деловая коммуникация и русская речевая культура", description: "Развитие навыков делового общения и культуры речи.", image: communicationImage, fearRating: 2 },
-  { name: "История России", description: "Изучение ключевых событий и процессов в истории России.", image: historyImage, fearRating: 3 },
-  // Добавьте остальные предметы с изображениями и рейтингом страха
+  { 
+    name: "Структуры и алгоритмы обработки данных", 
+    description: "Изучение структур данных и алгоритмов их обработки.", 
+    image: algorithmsImage, 
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1qPaEi3TdbSK3M3f81P7KutIDX8EsRlhjX4f4AQD2-xk/edit?usp=sharing" 
+  },
+  { 
+    name: "Деловая коммуникация и русская речевая культура", 
+    description: "Развитие навыков делового общения и культуры речи.", 
+    image: communicationImage, 
+    fearRating: 2,
+    docLink: "#" // Замените на реальную ссылку
+  },
+  { 
+    name: "История России", 
+    description: "Изучение ключевых событий и процессов в истории России.", 
+    image: historyImage, 
+    fearRating: 3,
+    docLink: "#" // Замените на реальную ссылку
+  },
 ];
 
-// Фильтрация предметов по введённому запросу
 const filteredSubjects = computed(() => {
   if (!searchQuery.value) return [];
   return subjects.filter(subject =>
@@ -30,17 +60,15 @@ const filteredSubjects = computed(() => {
   );
 });
 
-// Выбор предмета и открытие модального окна
 const selectSubject = (subject) => {
   selectedSubject.value = subject;
-  isModalOpen.value = true; // Открываем модальное окно
-  searchQuery.value = ''; // Очистка поиска
+  isModalOpen.value = true;
+  searchQuery.value = '';
 };
 
-// Закрытие модального окна
 const closeModal = () => {
   isModalOpen.value = false;
-  selectedSubject.value = null; // Очистка выбранного предмета
+  selectedSubject.value = null;
 };
 </script>
 
@@ -59,7 +87,6 @@ const closeModal = () => {
             class="search-input"
           />
         </div>
-        <!-- Список похожих предметов -->
         <div v-if="filteredSubjects.length > 0" class="suggestions">
           <div
             v-for="subject in filteredSubjects"
@@ -74,7 +101,6 @@ const closeModal = () => {
     </div>
 
     <div class="content">
-      <!-- Блок "О нас" -->
       <div class="str">
         <h2 class="about-heading">О нас</h2>
         <div class="text-with-image">
@@ -100,14 +126,11 @@ const closeModal = () => {
       </div>
     </div>
 
-    <!-- Модальное окно -->
     <div v-if="isModalOpen" class="modal-overlay">
       <div class="modal">
         <button class="close-button" @click="closeModal">×</button>
         <div class="modal-content">
-          <!-- Картинка слева -->
           <img :src="selectedSubject.image" alt="Subject Image" class="subject-image" />
-          <!-- Контент справа -->
           <div class="modal-text">
             <h2>{{ selectedSubject.name }}</h2>
             <p>{{ selectedSubject.description }}</p>
@@ -115,12 +138,18 @@ const closeModal = () => {
               <span>Рейтинг страха: </span>
               <span v-for="star in 5" :key="star" class="star" :class="{ 'filled': star <= selectedSubject.fearRating }">★</span>
             </div>
+            <a 
+              :href="selectedSubject.docLink" 
+              target="_blank" 
+              class="doc-link"
+            >
+              Открыть учебные материалы
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Футер -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
@@ -143,38 +172,28 @@ const closeModal = () => {
 </template>
 
 <style>
-/* Фон всей страницы */
 body {
-  background: #181818; /* Темный фон для всей страницы */
+  background: #181818;
   margin: 0;
   font-family: 'Kanit', sans-serif;
-  color: #ffffff; /* Белый текст по умолчанию */
+  color: #ffffff;
 }
 
-/* Анимация для плавного появления */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 
 <style scoped>
-/* Основной контейнер страницы */
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #181818; /* Темный фон для контейнера */
-  color: #ffffff; /* Белый текст по умолчанию */
+  background: #181818;
+  color: #ffffff;
 }
 
-/* Хедер */
 .header {
   display: flex;
   align-items: center;
@@ -209,7 +228,6 @@ body {
   animation: fadeIn 0.5s ease-in-out 0.3s forwards;
 }
 
-/* Поиск */
 .search-container {
   position: relative;
   margin-left: 20px;
@@ -253,13 +271,12 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Список предложений */
 .suggestions {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background: #333; /* Темный фон для списка */
+  background: #333;
   border: 1px solid #444;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -272,14 +289,13 @@ body {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
-  color: #ffffff; /* Белый текст */
+  color: #ffffff;
 }
 
 .suggestion-item:hover {
-  background-color: #444; /* Темный фон при наведении */
+  background-color: #444;
 }
 
-/* Основной контент */
 .content {
   flex: 1;
   padding-top: 100px;
@@ -287,7 +303,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Блок "О нас" */
 .str {
   font-family: 'Kanit', sans-serif;
   color: #ffffff;
@@ -299,8 +314,8 @@ body {
   text-align: justify;
   margin: 20px auto 40px;
   border-radius: 20px;
-  background: #181818; /* Темный фон */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out 0.4s forwards;
@@ -342,23 +357,15 @@ body {
 
 .str p {
   margin-bottom: 20px;
-  letter-spacing: normal;
-  word-spacing: normal;
-  max-width: 100%;
 }
 
-.str p:last-child {
-  margin-bottom: 0;
-}
-
-/* Модальное окно */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -366,44 +373,44 @@ body {
 }
 
 .modal {
-  background: #181818; /* Темный фон для модального окна */
+  background: #181818;
   padding: 20px;
   border-radius: 8px;
-  max-width: 600px; /* Увеличим ширину модального окна */
+  max-width: 600px;
   width: 90%;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая рамка */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content {
   display: flex;
-  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
-  gap: 20px; /* Расстояние между картинкой и текстом */
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .subject-image {
-  width: 150px; /* Уменьшаем ширину картинки */
+  width: 150px;
   height: auto;
   border-radius: 8px;
-  flex-shrink: 0; /* Запрещаем картинке сжиматься */
+  flex-shrink: 0;
 }
 
 .modal-text {
-  flex: 1; /* Текст занимает оставшееся пространство */
+  flex: 1;
 }
 
 .modal h2 {
-  color: #007bff; /* Цвет заголовка */
+  color: #007bff;
   margin-bottom: 10px;
-  font-size: 24px; /* Увеличим размер заголовка */
+  font-size: 24px;
 }
 
 .modal p {
-  color: #ffffff; /* Белый текст */
+  color: #ffffff;
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 15px; /* Отступ снизу */
+  margin-bottom: 15px;
 }
 
 .fear-rating {
@@ -423,6 +430,26 @@ body {
   color: #ffcc00;
 }
 
+.doc-link {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+
+.doc-link:hover {
+  background: #0056b3;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -431,14 +458,13 @@ body {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #007bff; /* Цвет кнопки */
+  color: #007bff;
 }
 
 .close-button:hover {
-  color: #0056b3; /* Цвет кнопки при наведении */
+  color: #0056b3;
 }
 
-/* Футер */
 .footer {
   background-color: #181818;
   color: #7d7d7d;
@@ -502,5 +528,23 @@ body {
 
 #links {
   color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subject-image {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .doc-link {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
