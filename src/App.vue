@@ -65,7 +65,7 @@ const searchQuery = ref('');
         <div class="footer-section right-section">
           <p>&copy; 2025 HelpStud.</p>
           <p>
-            Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link" id = "links">Metelykx</a>
+            Разработано <a href="https://github.com/Metelykx" target="_blank" class="metelykx-link" id="links">Metelykx</a>
           </p>
         </div>
       </div>
@@ -192,6 +192,9 @@ b {
   backdrop-filter: blur(12px); /* Усилено размытие */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Более яркая рамка */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Усиленная тень */
+  margin-left: 2.7%;
+  opacity: 0; /* Начальное состояние */
+  animation: fadeIn 0.5s ease-in-out 0.4s forwards; /* Анимация */
 }
 
 .about-heading {
@@ -267,6 +270,7 @@ b {
   width: 100%;
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out 0.8s forwards;
+  margin-left: 2.7%;
 }
 
 .footer-content {
@@ -313,6 +317,6 @@ b {
   text-decoration: underline;
 }
 #links {
-  color:#007bff;
+  color: #007bff;
 }
 </style>
