@@ -395,8 +395,8 @@ body {
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3px; /* Уменьшено значение */
+  right: 10px; /* Уменьшено значение */
   background: none;
   border: none;
   font-size: 20px;
