@@ -24,6 +24,22 @@ import perPr from './assets/sub/perPr.png';
 import zifrTech from './assets/sub/zifrTech.png';
 import ecoresh from './assets/sub/ecoresh.png';
 
+
+import compNet from './assets/sub/compNet.png';
+import objP from './assets/sub/objP.png';
+import mathVer from './assets/sub/mathVer.png';
+import intAn from './assets/sub/intAn.png';
+import osnProject from './assets/sub/osnProject.png';
+import bezPr from './assets/sub/bezPr.png';
+
+
+import ziftFuture from './assets/sub/ziftFuture.png';
+import desMath from './assets/sub/desMath.png';
+import mkm from './assets/sub/mkm.png';
+import authmath from './assets/sub/authmath.png';
+import bd from './assets/sub/bd.png';
+import hisRel from './assets/sub/hisRel.png';
+
 const searchQuery = ref('');
 const selectedSubject = ref(null);
 const isModalOpen = ref(false);
