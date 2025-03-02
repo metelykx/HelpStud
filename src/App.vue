@@ -1,3 +1,4 @@
+Denys Ivaschenko, [02.03.2025 23:15]
 <script setup>
 import { ref, computed } from 'vue';
 import logo from './assets/HelpStud.png';
@@ -40,9 +41,42 @@ import authmath from './assets/sub/authmath.png';
 import bd from './assets/sub/bd.png';
 import hisRel from './assets/sub/hisRel.png';
 
+import fizika from './assets/sub/fizika.png';
+import praktTheory from './assets/sub/praktTheory.png';
+import iskIntel from './assets/sub/iskIntel.png';
+import compSys from './assets/sub/compSys.png';
+import sysProg from './assets/sub/sysProg.png';
+import signal from './assets/sub/signal.png';
+import microProc from './assets/sub/microProc.png';
+import sysAdm from './assets/sub/sysAdm.png';
+import devProj from './assets/sub/devProj.png';
+import verif from './assets/sub/verif.png';
+import parDist from './assets/sub/parDist.png';
+import techPr from './assets/sub/techPr.png';
+import elektro from './assets/sub/elektro.png';
+import projInfSys from './assets/sub/projInfSys.png';
+import infSec from './assets/sub/infSec.png';
+import infoCod from './assets/sub/infoCod.png';
+import militPrep from './assets/sub/militPrep.png';
+import projProg from './assets/sub/projProg.png';
+
+
+import progModel from './assets/sub/progModel.png';
+import netTel from './assets/sub/netTel.png';
+import globNet from './assets/sub/globNet.png';
+import commNet from './assets/sub/commNet.png';
+import humanIntf from './assets/sub/humanIntf.png';
+import crossPlat from './assets/sub/crossPlat.png';
+import webPr from './assets/sub/webPr.png';
+import mobileApp from './assets/sub/mobileApp.png';
+
+
 const searchQuery = ref('');
 const selectedSubject = ref(null);
 const isModalOpen = ref(false);
+
+
+
 
 // Массив предметов с данными
 const subjects = [
@@ -137,6 +171,9 @@ const subjects = [
     fearRating: 4,
     docLink: "https://docs.google.com/document/d/1kGynKlNpPyo1oFEVYaSDM6uCvr-pHBMrWbaK3EjQAho/edit?usp=sharing" // Замените на реальную ссылку
 
+
+
+
   },
   {
     name:"Человек и право",
@@ -230,6 +267,9 @@ const subjects = [
     description:"Изучение теории автоматов и формальных языков.Также,изучение алгоритмов.",
     image: authmath,
     fearRating: 4,
+
+
+
     docLink: "https://docs.google.com/document/d/1Wfd7KQVctchAAwQxhyg1jUBrFMh4b8qSRv9T96mFgDc/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -246,11 +286,234 @@ const subjects = [
     image: hisRel,
     fearRating: 4,
     docLink: "https://docs.google.com/document/d/1hf5AJG1ZBJTAOJlEmenjeSYrzJvS4tc030dtffH7GOc/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Физика",
+    description:"Изучение физики и ее применения в различных областях.",
+    image: fizika,
+    fearRating: 4,
+    docLink: "#"
+  },
+  {
+    name:"Прикладная теория цифровых автоматов",
+    description:"Изучение прикладной теории цифровых автоматов и ее применения.",
+    image: praktTheory,
+    fearRating: 4,
+    docLink:"#"
+  },
+  {
+    name:"Искусственный интеллект: технологии и человек",
+    description:"Изучение искусственного интеллекта, технологий и человека.",
+    image: iskIntel,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1Ju_3X4r2sAGoDwOPFsWcUVof0KHw1NhX5mfQWGDb9pc/edit?usp=sharing"
+  },
+  {
+    name:"Компьютерные системы",
+    description:"Изучение компьютерных систем и их применения.",
+    image: compSys,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1dZv1xrUIc46rtJ3rGXsP13vTLhRzGrPtApbBJw42Rgk/edit?usp=sharing"
+  },
+  {
+    name:"Системное программное обеспечение",
+    description:"Изучение системного программного обеспечения и его применения.",
+    image: sysProg,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1bRR-bnt6aROI3lot51PgEcWpzn6lJI-tNdSNItYax_w/edit?usp=sharing"
+  },
+  {
+    name:"Обработка сигналов",
+    description:"Изучение обработки сигналов и ее применения.",
+    image: signal,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1EbaWsD7pp9x6icI7mhPkJOb4SEHiV0h-ApSZsFGtN6E/edit?usp=sharing"
+  },
+  {
+    name:"Микропроцессорные системы",
+    description:"Изучение микропроцессорных систем и их применения.",
+    image: microProc,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1b6M62cVXGO1aEIjtaAmwpsv0CFj4j4pLHQdORNxTvb4/edit?usp=sharing"
+  },
+  {
+    name:"Системное администрирование",
+    description:"Изучение системного администрирования и его применения.",
+    image: sysAdm,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1hbALgQGMJK6mufPgVkt0PEmmvxXkSe2QgwAcsoZlL0U/edit?usp=sharing"
+  },
+  {
+    name:"Управление разработкой командных программных проектов",
+    description:"Изучение управления разработкой командных программных проектов и его применения.",
+    image: devProj,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1gwtA-1xMmTMfydB1fdbsstY2i7lhIUb94nXZ2ZVOgzs/edit?usp=sharing"
+  },
+  {
+    name:"Верификация, аттестация и качество программного обеспечения",
+    description:"Изучение верификации, аттестации и качества программного обеспечения и его применения.",
+    image: verif,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1VCwHZfSz_-UXqUMniBcKBNojt3cYQrtTuM5EiQ8ji7o/edit?usp=sharing"
+  },
+  {
+    name:"Параллельные и распределенные вычисления",
+    description:"Изучение параллельных и распределенных вычислений и их применения.",
+    image: parDist,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1GuBsVuxE9-R_J66Hguw4al18XBivd5iKIKm441xqboc/edit?usp=sharing"
+  },
+  {
+    name:"Технологии и процесс разработки программного обеспечения",
+    description:"Изучение технологий и процесса разработки программного обеспечения и его применения.",
+    image: techPr,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1fdsFhjZY7p_wpw-0dEmz6Y6uYxF6XQdF76DoCAxush4/edit?usp=sharing"
+  },
+
+
+
+
+  {
+    name:"Электроника",
+    description:"Изучение электроники и ее применения.",
+    image: elektro,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1ofqQe27oNEyLe8WsKJrv3tDKcNYmYDtF8C2M6Dryiq0/edit?usp=sharing"
+  },
+
+  {
+    name:"Проектирование информационных систем",
+    description:"Изучение проектирования информационных систем и ее применения.",
+    image: projInfSys,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/170T0UGKBnortwpKPki4XdXaU7RO6JmSY2q5swlYAflQ/edit?usp=sharing"
+  },
+
+  {
+    name:"Системное программирование",
+    description:"Изучение системного программирования и его применения.",
+    image: sysProg,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1uIrpNbEHQ6WuOYjyvpf6GVqObpFwlix-VdLyDK3eoXs/edit?usp=sharing"
+  },
+
+  {
+    name:"Основы информационной безопасности",
+    description:"Изучение основ информационной безопасности и ее применения.",
+    image: infSec,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/197-5yLyJWWKHS5_JvLSkxu70xwNrNpriBlRKesu8YS8/edit?usp=sharing"
+  },
+
+  {
+    name:"Теория информации и кодирование",
+    description:"Изучение теории информации и кодирования и их применения.",
+    image: infoCod,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1BOA3C73Se7quLjh6bHst0p340II5jk_OARCazWPCTzY/edit?usp=sharing"
+  },
+
+  {
+    name:"Сети и телекоммуникации",
+    description:"Изучение сетей и телекоммуникаций и их применения.",
+    image: netTel,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/12OnG3HZ1BYurHxYHXaoOJpGx0raeIoOXAyZCd5VnD7c/edit?usp=sharing"
+  },
+
+  {
+    name:"Web-программирование",
+    description:"Изучение web-программирования и его применения.",
+    image: webPr,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1QQ5MbByClCSTXDTUK3ZloUMIz9AuWomjVA11j68-Zek/edit?usp=sharing"
+  },
+
+  {
+    name:"Основы военной подготовки",
+    description:"Изучение основ военной подготовки и ее применения.",
+    image: militPrep,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1v2nFZBwfWEHuo2eklx0YY7q2r80h5Evxmbma1hkbL58/edit?usp=sharing"
+  },
+
+  {
+    name:"Проектирование программного обеспечения",
+    description:"Изучение проектирования программного обеспечения и его применения.",
+    image: projProg,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1EAq_9yJLVJ539kR5uADfD3Fzse1buBYrAFKKW65Itxc/edit?usp=sharing"
+  },
+
+  {
+    name:"Парадигмы программирования",
+    description:"Изучение парадигм программирования и ее применения.",
+    image: progModel,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/15oMLYJ6CVWj4_UIxXQJHkVEvF7jI48yiwag91BQoSa8/edit?usp=sharing"
+  },
+  {
+    name:"Безопасность компьютерных сетей",
+    description:"Изучение безопасности компьютерных сетей и ее применения.",
+    image: compNet,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/10rKCPEEwVOv6pDbxsKZxOPU5YU7H0clCtnOyhCM3Cog/edit?usp=sharing"
+  },
+  {
+    name:"Технологии проектирования сетей класса SOHO",
+    description:"Изучение технологий проектирования сетей класса SOHO и ее применения.",
+    image: netTel,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1-hWDaCgIg386qjNFR3VuiCJrotAwgPEm0V96rOx8-go/edit?usp=sharing"
+  },
+  {
+    name:"Основы построения глобальных сетей",
+    description:"Изучение основ построения глобальных сетей и ее применения.",
+    image: globNet,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/113Lu_l9U3Qp3sXCvRLpllftsi4Nupp10I1q9f9Z5Jvw/edit?usp=sharing"
+  },
+  {
+    name:"Основы коммутации в компьютерных сетях",
+    description:"Изучение основ коммутации в компьютерных сетях и ее применения.",
+    image: commNet,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1wbkZDzj_hBonGet-ceMGEOLhdkP3dGN5wXxDPYd8CV4/edit?usp=sharing"
+  },
+
+
+
+
+  {
+    name:"Разрабокта и программирование человеко-машинного интерфейса",
+    description:"Изучение разработки и программирования человеко-машинного интерфейса и его применения.",
+    image: humanIntf,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1Cm33M61V51wmvFCQDRSsvyAwRM4FNtkSaeOlzh6X0O0/edit?usp=sharing"
+  },
+  {
+    name:"Кроссплатформенное программирование",
+    description:"Изучение кроссплатформенного программирования и его применения.",
+    image: crossPlat,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1_Maz4MurMJLcQbtr1ma_xm3PotlhT3D4W0HAyu6FAKc/edit?usp=sharing"
+  },
+  {
+    name:"Проектирование Web-приложений",
+    description:"Изучение проектирования Web-приложений и его применения.",
+    image: webPr,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/14OTNEpngsh-t4-ig3DIMtbDqtwHyfSNWUn22gcdsKhM/edit?usp=sharing"
+  },
+  {
+    name:"Разработка мобильных приложений",
+    description:"Изучение разработки мобильных приложений и его применения.",
+    image: mobileApp,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1OSU60SWu3fb2-RKB496QsrwrdJn9_N1pN2zMbO6qoDY/edit?usp=sharing"
   }
-  
-  
-  
-  
 ];
 
 const filteredSubjects = computed(() => {
@@ -325,6 +588,9 @@ const closeModal = () => {
         </div>
       </div>
     </div>
+
+
+
 
     <div v-if="isModalOpen" class="modal-overlay">
       <div class="modal">
@@ -502,6 +768,9 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
+
+
+
 
 .str {
   font-family: 'Kanit', sans-serif;
@@ -730,21 +999,372 @@ body {
   color: #007bff;
 }
 
+/* Медиа-запросы для адаптивности */
+
+/* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin:0 auto;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+
+
+
+  .content {
+    padding-top: 150px;
+  }
+
+  .str {
+    padding: 20px;
+    font-size: 16px;
+    margin-top:-10px;
+  }
+
+  .text-with-image {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .text {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  .side-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+
   .modal-content {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
-  
+
   .subject-image {
     width: 100%;
     max-width: 200px;
     margin-bottom: 20px;
   }
-  
-  .doc-link {
-    width: 100%;
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
+
+  .footer-section {
+    margin-bottom: 10px;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom:10px;
+  }
+
+  .search-container {
+    width: 250px;
+  }
+
+  .content {
+    padding-top: 120px;
+  }
+
+  .str {
+    padding: 25px;
+    font-size: 18px;
+  }
+
+  .text-with-image {
+    gap: 50px;
+  }
+
+  .side-image {
+    width: 300px;
+  }
+
+  .modal {
+    max-width: 500px;
+  }
+
+  .subject-image {
+    width: 120px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 10px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .search-container {
+    width: 350px;
+  }
+
+  .content {
+    padding-top: 100px;
+  }
+
+  .str {
+    padding: 30px;
+    font-size: 20px;
+  }
+
+  .text-with-image {
+    gap: 100px;
+  }
+
+  .side-image {
+    width: 400px;
+  }
+
+  .modal {
+    max-width: 600px;
+  }
+
+  .subject-image {
+    width: 150px;
+  }
+
+  .footer-content {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 5px;
+  }
+  .about-heading {
+    font-size: 25px;
+  }
+  .logo {
+    width: 40px;
+    display: none;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom:10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .content {
+    padding-top: 130px;
+  }
+
+  .str {
+    padding: 15px;
+    font-size: 14px;
+    margin-top:-10%;
+  }
+
+  .side-image {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  .doc-link {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 5px 10px;
+  }
+
+  .footer-heading {
+    font-size: 14px;
+  }
+
+  .contact-link,
+  .metelykx-link {
+    font-size: 14px;
+  }
+}
+/* Планшеты в альбомной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    padding: 10px 30px;
+  }
+
+  .str {
+    max-width: 90%;
+    padding: 25px;
+    margin: 30px auto;
+    width:950px;
+  }
+
+  .text-with-image {
+    gap: 50px;
+    align-items: center;
+  }
+
+  .text {
+    min-width: unset;
+    max-width: 55%;
+    font-size: 18px;
+  }
+
+  .side-image {
+    width: 40%;
+    max-width: 350px;
+  }
+
+  .modal {
+    max-width: 70%;
+  }
+}
+
+/* Планшеты в портретной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .str {
+    max-width: 95%;
+    padding: 25px;
+    width: 950px;
+  }
+
+  .text-with-image {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .text {
+    max-width: 100%;
+    min-width: unset;
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .side-image {
+    width: 60%;
+    max-width: 400px;
+    order: -1;
+  }
+
+  .modal {
+    max-width: 80%;
+    padding: 25px;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .subject-image {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Общие стили для всех планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+
+  .logo {
+    width: 45px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .search-container {
+    width: 280px;
+  }
+
+  .footer-content {
+    max-width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1 1 45%;
+    margin-bottom: 15px;
+  }
+
+  .doc-link {
+    font-size: 15px;
+    padding: 12px 25px;
+  }
+}
+
+/* Оптимизация для компактных планшетов */
+@media (min-width: 768px) and (max-width: 900px) {
+  .text {
+    font-size: 17px;
+  }
+
+  .side-image {
+    width: 45%;
+  }
+
+  .modal {
+    max-width: 85%;
+  }
+}
+
 </style>
