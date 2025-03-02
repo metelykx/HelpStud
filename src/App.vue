@@ -58,15 +58,199 @@ const subjects = [
     description: "Развитие навыков делового общения и культуры речи.", 
     image: communicationImage, 
     fearRating: 2,
-    docLink: "#" // Замените на реальную ссылку
+    docLink: "https://docs.google.com/document/d/15aRhSYUqKa8aDya5p3YuTuugEsvD8xcY9B8qnkDbAgQ/edit?usp=sharing" // Замените на реальную ссылку
   },
   { 
     name: "История России", 
     description: "Изучение ключевых событий и процессов в истории России.", 
     image: historyImage, 
     fearRating: 3,
+    docLink: "https://docs.google.com/document/d/1kDTU-cg00oGQx7KHdcmJsKeyr5__mjsALOwDi0xkP8s/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name: "Информатика и основы программирования",
+    description: "Изучение основ программирования и применения информационных технологий в различных областях.",
+    image: infProg,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1CwM3E22gRBwyQhmNyn-0mBzX7H6mDOcO7BJmZ8l9qkg/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Высшая математика",
+    description:"Изучение высших курсов математики и их применения в различных областях.",
+    image: math,
+    fearRating: 5,
+    docLink: "https://docs.google.com/document/d/1tUqpIeMJKvRXvjjfdHttUoNqorMgsFgI3rLAlCObUo0/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Иностранные языки",
+    description:"Изучение иностранных языков и их применения в различных областях.",
+    image: eng,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1oeJ9_O8G6BmYrQJsvxh9Q7TMFypF6gxpcNIJQS3nAGw/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Алгоритмизация и программирование",
+    description:"Изучение алгоритмов и программирования в различных областях.",
+    image: programming,
+    fearRating: 5,
+    docLink: "https://docs.google.com/document/d/1raSPMqcdTfEua-QWGiRMotopW2o6RSSazsyH157MzWE/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Физическая культура и спорт",
+    description:"Развитие физических навыков и умений в различных областях.",
+    image: sport,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/14H13_EQId6Dg7im2y2EyemdpTCfg3uKt6TyoXkB62Tk/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Проектная деятельность",
+    description:"Развитие навыков проектной деятельности",
+    image: doProject,
+    fearRating: 5,
+    docLink: "https://docs.google.com/document/d/17onhBwlFmlnp4HvMKeDZ72mvCF1inSR8nLV2j2jDrzU/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Операционные системы",
+    description:"Изучение операционных систем и их применения",
+    image: os,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/169xwFQKP5p2aGB9XjtI3HeNxN5SYb9fviNNiGzOJ6FY/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Алгоритмы и методы вычислений",
+    description:"Изучение алгоритмов и методов вычислений",
+    image: methodV,
+    fearRating: 5,
     docLink: "#" // Замените на реальную ссылку
   },
+  {
+    name:"Современне технологии программирования",
+    description:"Изучение современных технологий программирования, таких как Git и другие. ",
+    image: stp,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1ztfB74J6GG6opxyRxyAGakD6MCKhd-ExwDLHsjd_SCU/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Основы российской государственности",
+    description:"Изучение основ российской государственности, включая её историю, права и системы управления властью.",
+    image: osrf,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1kGynKlNpPyo1oFEVYaSDM6uCvr-pHBMrWbaK3EjQAho/edit?usp=sharing" // Замените на реальную ссылку
+
+  },
+  {
+    name:"Человек и право",
+    description:"Изучение прав человека и их особенностей.",
+    image: perPr,
+    fearRating: 4,    
+    docLink: "#" // Замените на реальную ссылку
+  },
+
+  {
+    name:"Цифровые технологии в профессиональной среде",
+    description:"Изучение цифровых технологий в профессиональной среде.",
+    image: zifrTech,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1OQK-1hhTx_xXdxwBiDrgztWSwNJva3UGsHqvkrVqQs8/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Экономика личных решений",
+    description:"Изучение экономики, принятие решений и процессы в области экономики.",
+    image: ecoresh,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1J27-_254aMOAtrdDVrcTAEhE282jYKzb9FQE7SF49Sw/edit?usp=sharing" // Замените на реальную ссылку
+  },
+
+  {
+    name:"Компьютерные сети",
+    description:"Изучение компьютерных сетей и их применения.",
+    image: compNet,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1rV6Sffd3lDDAZEuvGKwW38Sy6oIDxENJ2vQrqAMsl_E/edit?usp=sharing" // Замените на реальную ссылку
+
+  },
+  {
+    name:"Объектно-ориентированное программирование",
+    description:"Изучение объектно-ориентированного программирования на C#.",
+    image: objP,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1B58KSFBE5bG0uz6sQpyCiRQK2euf9tTNb7DtonG-DlI/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Теория вероятностей и математическая статистика",
+    description:"Изучение теории вероятностей и математической статистики.",
+    image: mathVer,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1AigYgxJBIyr-2R9PypW5Oo7704TURv2mECRtHUYF7Sg/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Интеллектуальный анализ данных",
+    description:"Изучение интеллектуального анализа данных и его применения. Также, искуственный интеллект.",
+    image: intAn,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1QB_ZcpaOs6CJLa9qYKdPg1_8tH9wKC9fgG3A09PjlFY/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Основы социального проектирования",
+    description:"Изучение основ социального проектирования и его применения.Проекты на социальном пространстве.",
+    image: osnProject,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1nHlk0dWxQ__XRtsM6d9jMVkmlR_110VakfP6U6VlopE/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Безопасность природной среды и жизнедеятельности человека",
+    description:"Изучение безопасности природной среды и жизнедеятельности человека.Развитие навыков медицины",
+    image: bezPr,
+    fearRating: 4,    
+    docLink: "https://docs.google.com/document/d/10mB_yeoGLeAXGlneVvPGdb8PSgS0KMllUi1JPYy4esM/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Цифровая экосистема будущего",
+    description:"Изучение технологий и процессов в области цифровой экосистемы будущего.",
+    image: ziftFuture,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1aXgyg9OBhIHDs-YYWhkOMLlVXJ0rHIe7O-byCbcTDH4/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Дискретная математика",
+    description:"Изучение дискретной математики и ее применения.",
+    image: desMath,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1n2UOojHktWo9nWeD4F-dplNKVBz6uHn9wS64sLMDVRo/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Математическое и компьютерное моделирование",
+    description:"Изучение математического и компьютерного моделирования,создание игр.",
+    image: mkm,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1-H1Z_FCGFzcMKfy1Tr4q16JPXJh1jWiWapzRVFkrM0s/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Теория автоматов и формальных языков",
+    description:"Изучение теории автоматов и формальных языков.Также,изучение алгоритмов.",
+    image: authmath,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1Wfd7KQVctchAAwQxhyg1jUBrFMh4b8qSRv9T96mFgDc/edit?usp=sharing" // Замените на реальную ссылку
+  },
+  {
+    name:"Базы данных",
+    description:"Изучение баз данных и ее применения.",
+    image: bd,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/12eOMhJ3Jy-mEbh-epzXrEYpsYXEKtJ9YG_lX7lLJ3os/edit?usp=sharing" // Замените на реальную ссылку
+  },
+
+  {
+    name:"История религий России",
+    description:"Изучение истории религий России. Как все зараждалось,а также,современное религиозное общество.",
+    image: hisRel,
+    fearRating: 4,
+    docLink: "https://docs.google.com/document/d/1hf5AJG1ZBJTAOJlEmenjeSYrzJvS4tc030dtffH7GOc/edit?usp=sharing" // Замените на реальную ссылку
+  }
+  
+  
+  
+  
 ];
 
 const filteredSubjects = computed(() => {
