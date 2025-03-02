@@ -91,14 +91,14 @@ const subjects = [
     name: "Деловая коммуникация и русская речевая культура", 
     description: "Развитие навыков делового общения и культуры речи.", 
     image: communicationImage, 
-    fearRating: 2,
+    fearRating: 3,
     docLink: "https://docs.google.com/document/d/15aRhSYUqKa8aDya5p3YuTuugEsvD8xcY9B8qnkDbAgQ/edit?usp=sharing" // Замените на реальную ссылку
   },
   { 
     name: "История России", 
     description: "Изучение ключевых событий и процессов в истории России.", 
     image: historyImage, 
-    fearRating: 3,
+    fearRating: 4,
     docLink: "https://docs.google.com/document/d/1kDTU-cg00oGQx7KHdcmJsKeyr5__mjsALOwDi0xkP8s/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -119,7 +119,7 @@ const subjects = [
     name:"Иностранные языки",
     description:"Изучение иностранных языков и их применения в различных областях.",
     image: eng,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1oeJ9_O8G6BmYrQJsvxh9Q7TMFypF6gxpcNIJQS3nAGw/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -147,7 +147,7 @@ const subjects = [
     name:"Операционные системы",
     description:"Изучение операционных систем и их применения",
     image: os,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/169xwFQKP5p2aGB9XjtI3HeNxN5SYb9fviNNiGzOJ6FY/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -187,7 +187,7 @@ const subjects = [
     name:"Цифровые технологии в профессиональной среде",
     description:"Изучение цифровых технологий в профессиональной среде.",
     image: zifrTech,
-    fearRating: 4,
+    fearRating: 2,
     docLink: "https://docs.google.com/document/d/1OQK-1hhTx_xXdxwBiDrgztWSwNJva3UGsHqvkrVqQs8/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -231,7 +231,7 @@ const subjects = [
     name:"Основы социального проектирования",
     description:"Изучение основ социального проектирования и его применения.Проекты на социальном пространстве.",
     image: osnProject,
-    fearRating: 4,
+    fearRating: 3,
     docLink: "https://docs.google.com/document/d/1nHlk0dWxQ__XRtsM6d9jMVkmlR_110VakfP6U6VlopE/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
@@ -252,21 +252,21 @@ const subjects = [
     name:"Дискретная математика",
     description:"Изучение дискретной математики и ее применения.",
     image: desMath,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1n2UOojHktWo9nWeD4F-dplNKVBz6uHn9wS64sLMDVRo/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
     name:"Математическое и компьютерное моделирование",
     description:"Изучение математического и компьютерного моделирования,создание игр.",
     image: mkm,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1-H1Z_FCGFzcMKfy1Tr4q16JPXJh1jWiWapzRVFkrM0s/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
     name:"Теория автоматов и формальных языков",
     description:"Изучение теории автоматов и формальных языков.Также,изучение алгоритмов.",
     image: authmath,
-    fearRating: 4,
+    fearRating: 5,
 
 
 
@@ -291,14 +291,14 @@ const subjects = [
     name:"Физика",
     description:"Изучение физики и ее применения в различных областях.",
     image: fizika,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/19ATssMAwgsWgbtq6unaQb3vo1FTMSz3FNK8-MtBnDt0/edit?usp=sharing"
   },
   {
     name:"Прикладная теория цифровых автоматов",
     description:"Изучение прикладной теории цифровых автоматов и ее применения.",
     image: praktTheory,
-    fearRating: 4,
+    fearRating: 5,
     docLink:"https://docs.google.com/document/d/1NWSlgPGBIkAUkGtcWZiCEbYwX7Fc784WW5Yr8Z_Ott8/edit?usp=sharing"
   },
   {
@@ -319,14 +319,14 @@ const subjects = [
     name:"Системное программное обеспечение",
     description:"Изучение системного программного обеспечения и его применения.",
     image: sysProg,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1bRR-bnt6aROI3lot51PgEcWpzn6lJI-tNdSNItYax_w/edit?usp=sharing"
   },
   {
     name:"Обработка сигналов",
     description:"Изучение обработки сигналов и ее применения.",
     image: signal,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1EbaWsD7pp9x6icI7mhPkJOb4SEHiV0h-ApSZsFGtN6E/edit?usp=sharing"
   },
   {
@@ -379,7 +379,7 @@ const subjects = [
     name:"Электроника",
     description:"Изучение электроники и ее применения.",
     image: elektro,
-    fearRating: 4,
+    fearRating: 5,
     docLink: "https://docs.google.com/document/d/1ofqQe27oNEyLe8WsKJrv3tDKcNYmYDtF8C2M6Dryiq0/edit?usp=sharing"
   },
 
@@ -435,7 +435,7 @@ const subjects = [
     name:"Основы военной подготовки",
     description:"Изучение основ военной подготовки и ее применения.",
     image: militPrep,
-    fearRating: 4,
+    fearRating: 3,
     docLink: "https://docs.google.com/document/d/1v2nFZBwfWEHuo2eklx0YY7q2r80h5Evxmbma1hkbL58/edit?usp=sharing"
   },
 
