@@ -155,7 +155,7 @@ const subjects = [
     description:"Изучение алгоритмов и методов вычислений",
     image: methodV,
     fearRating: 5,
-    docLink: "#" // Замените на реальную ссылку
+    docLink: "https://docs.google.com/document/d/1SAA8tn0-0VpLALzzoG89vGZRLSjrX3DbTyLQjGIgIkI/edit?usp=sharing" // Замените на реальную ссылку
   },
   {
     name:"Современне технологии программирования",
@@ -180,7 +180,7 @@ const subjects = [
     description:"Изучение прав человека и их особенностей.",
     image: perPr,
     fearRating: 4,    
-    docLink: "#" // Замените на реальную ссылку
+    docLink: "https://docs.google.com/document/d/1GoQSyGgEzAknWqs1RzCvXOrGnGFhXUoPw8scHXbYiyU/edit?usp=sharing" // Замените на реальную ссылку
   },
 
   {
@@ -292,14 +292,14 @@ const subjects = [
     description:"Изучение физики и ее применения в различных областях.",
     image: fizika,
     fearRating: 4,
-    docLink: "#"
+    docLink: "https://docs.google.com/document/d/19ATssMAwgsWgbtq6unaQb3vo1FTMSz3FNK8-MtBnDt0/edit?usp=sharing"
   },
   {
     name:"Прикладная теория цифровых автоматов",
     description:"Изучение прикладной теории цифровых автоматов и ее применения.",
     image: praktTheory,
     fearRating: 4,
-    docLink:"#"
+    docLink:"https://docs.google.com/document/d/1NWSlgPGBIkAUkGtcWZiCEbYwX7Fc784WW5Yr8Z_Ott8/edit?usp=sharing"
   },
   {
     name:"Искусственный интеллект: технологии и человек",
